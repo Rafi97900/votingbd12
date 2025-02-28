@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ভোট প্রদান</title>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="loginContainer" class="container">
+        <form class="form">
+            <h1>ভোট প্রদানের জন্য লগইন করুন</h1>
+            <input type="email" id="email" placeholder="ইমেইল ঠিকানা" required>
+            <input type="number" id="age" placeholder="বয়স" required>
+            <button type="button" onclick="login()">জমা দিন</button>
+        </form>
+    </div>
+
+    <div id="votingContainer" class="container" style="display: none;">
+        <h2>আপনার প্রিয় দল নির্বাচন করুন</h2>
+        <div class="teams-container">
+            <!-- Party 1 -->
+            <div class="team-box">
+                <img src="images/party1.png" alt="জাতীয় নাগরিক পার্টি" class="party-logo">
+                <h3>জাতীয় নাগরিক পার্টি</h3>
+                <div class="vote-stats hidden">
+                    <span class="neon-text" id="votes1">0</span> ভোট
+                    <div class="percentage" id="percent1">0%</div>
+                </div>
+                <button onclick="vote(1)">ভোট দিন</button>
+            </div>
+            <!-- Party 2 -->
+            <div class="team-box">
+                <img src="images/party2.png" alt="বাংলাদেশ জাতীয়তাবাদী দল" class="party-logo">
+                <h3>বাংলাদেশ জাতীয়তাবাদী দল</h3>
+                <div class="vote-stats hidden">
+                    <span class="neon-text" id="votes2">0</span> ভোট
+                    <div class="percentage" id="percent2">0%</div>
+                </div>
+                <button onclick="vote(2)">ভোট দিন</button>
+            </div>
+            <!-- Party 3 -->
+            <div class="team-box">
+                <img src="images/party3.png" alt="বাংলাদেশ জামায়াতে ইসলামী" class="party-logo">
+                <h3>বাংলাদেশ জামায়াতে ইসলামী</h3>
+                <div class="vote-stats hidden">
+                    <span class="neon-text" id="votes3">0</span> ভোট
+                    <div class="percentage" id="percent3">0%</div>
+                </div>
+                <button onclick="vote(3)">ভোট দিন</button>
+            </div>
+        </div>
+        <div id="userConfirmation"></div>
+    </div>
+
+    <div id="adminContainer" class="container" style="display: none;">
+        <h2>অ্যাডমিন প্যানেল</h2>
+        <button onclick="showAdminPanel()">সমস্ত ভোট দেখুন</button>
+        <div id="adminStats"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
